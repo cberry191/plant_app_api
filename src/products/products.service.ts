@@ -7,8 +7,12 @@ export class ProductsService {
   private products: Product[] = [];
 
   insertProduct(title: string, desc: string, price: number) {
+    // generate random-ish something for ID
+    // do better here 
     const prodId = Math.random().toString();
+    
     const newProduct = new Product(prodId, title, desc, price);
+    
     this.products.push(newProduct);
     return prodId;
   }
