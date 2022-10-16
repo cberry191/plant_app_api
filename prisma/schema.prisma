@@ -13,11 +13,26 @@ datasource db {
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
-  email   String
-  hash    String
-  hasedRt String?
+  email  String  @unique
+  hash   String
+  plants Plant[]
 
   @@map("users")
+}
+
+model Plant {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name        String
+  description String
+  link        String
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  @@map("plants")
 }

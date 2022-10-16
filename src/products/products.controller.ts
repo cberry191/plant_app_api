@@ -7,7 +7,6 @@ import {
   Patch,
   Delete,
 } from '@nestjs/common';
-import { getSystemErrorMap } from 'util';
 import { ProductsService } from './products.service';
 
 @Controller('products')
