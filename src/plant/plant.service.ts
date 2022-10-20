@@ -6,12 +6,11 @@ import { AddPlantDto } from './dto';
 export class PlantService {
   constructor(private prisma: PrismaService) {}
   // create plant
-  async addPlant(dto: AddPlantDto) {
+  async addPlant(userId: number, dto: AddPlantDto) {
     const plant = await this.prisma.plant.create({
       data: {
-        name: dto.name,
-        description: dto.description,
-        link: dto.link,
+        userId,
+        ...dto,
       },
     });
     return plant;
