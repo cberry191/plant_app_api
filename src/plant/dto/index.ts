@@ -1,1 +1,2 @@
-export * from './plant.dto';
+export * from './add-plant.dto';
+export * from './edit-plant.dto';
