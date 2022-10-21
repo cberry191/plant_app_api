@@ -24,7 +24,7 @@ export class PlantController {
 
   @Post()
   addPlant(@GetUser('id') userId: number, @Body() dto: AddPlantDto) {
-    return this.plantService.addPlant(dto, userId);
+    // return this.plantService.addPlant(dto, userId);
   }
 
   @Patch('id')
