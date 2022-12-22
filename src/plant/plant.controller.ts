@@ -35,9 +35,11 @@ export class PlantController {
     return this.plantService.addPlant(userId, dto);
   }
 
-  @Patch('id')
-  editPlant(@Param('id', ParseIntPipe) @Body() dto: EditPlantDto) {}
+  @Patch(':id')
+  editPlant(@Param('id', ParseIntPipe) @Body() dto: EditPlantDto) {
+    // return this.plantService.editPlant();
+  }
 
-  @Delete('id')
+  @Delete(':id')
   deletePlant(@Param('id', ParseIntPipe) plantId: number) {}
 }
